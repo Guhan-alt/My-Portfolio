@@ -4,72 +4,334 @@
 <head>
   <meta charset="UTF-8">
   <title>S GUHAN RAJ</title>
+  <style>
+    body {
+      background: linear-gradient(120deg, #f5f7fa 0%, #e3eafc 100%);
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      color: #263238;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3 {
+      margin-top: 30px;
+      letter-spacing: 2px;
+      color: #1a237e; /* Professional dark blue */
+    }
+    .section {
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 16px;
+      width: 80%;
+      box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+      background: #f0f4f8;
+      color: #263238;
+    }
+    .about {
+      background: linear-gradient(90deg, #e3eafc 60%, #f5f7fa 100%);
+      border: 2px solid #90caf9;
+    }
+    .education {
+      background: linear-gradient(90deg, #f5f7fa 60%, #fffde4 100%);
+      border: 2px solid #ffd54f;
+    }
+    .work {
+      background: linear-gradient(120deg, #e8f5e9 0%, #f5f7fa 100%);
+      border: 2px solid #81c784;
+    }
+    .skills {
+      background: linear-gradient(120deg, #ede7f6 0%, #f5f7fa 100%);
+      border: 2px solid #9575cd;
+    }
+    .certs {
+      background: linear-gradient(90deg, #fce4ec 0%, #f5f7fa 100%);
+      border: 2px solid #f06292;
+    }
+    table {
+      margin: auto;
+      width: 90%;
+      border-radius: 10px;
+      border-collapse: separate;
+      border-spacing: 0 8px;
+      font-size: 17px;
+      background: none;
+    }
+    th, td {
+      padding: 10px 14px;
+      border-radius: 8px;
+    }
+    .about table th {
+      background: #bbdefb;
+      color: #263238;
+      font-weight: 600;
+    }
+    .about table td {
+      background: #e3f2fd;
+      color: #263238;
+    }
+    .education table th {
+      background: #fff9c4;
+      color: #263238;
+      font-weight: 600;
+    }
+    .education table td {
+      background: #fffde7;
+      color: #263238;
+    }
+    .work table th {
+      background: #c8e6c9;
+      color: #263238;
+      font-weight: 600;
+    }
+    .work table td {
+      background: #e8f5e9;
+      color: #263238;
+    }
+    .skills-table th {
+      background: #d1c4e9;
+      color: #263238;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .skills-table td {
+      background: #ede7f6;
+      color: #263238;
+      font-size: 17px;
+    }
+    .skills-table .icon {
+      font-size: 22px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+    .certs h3 {
+      color: #ad1457;
+      margin-top: 18px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background: #263238;
+      color: #ffd54f;
+      border-radius: 0 0 16px 16px;
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
+    a {
+      color: #1976d2;
+      text-decoration: underline;
+      font-weight: 500;
+      font-size: 20px;
+    }
+    img {
+      border-radius: 10px;
+      box-shadow: 0 0 8px #bdbdbd;
+      margin: 10px;
+    }
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(90deg, #90caf9, #ffd54f, #81c784, #9575cd, #f06292);
+      margin: 36px 0;
+    }
+    /* Popup styles for certificates */
+    .certs img {
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .certs img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 16px #90caf9;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background: rgba(38, 50, 56, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 0 24px #263238;
+      background: #fff;
+      padding: 16px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .modal-content img {
+      max-width: 80vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 16px #90caf9;
+      background: #fff;
+    }
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      color: #1a237e;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+  </style>
 </head>
 
 <body>
-  <style>
-    *{
-      color: antiquewhite;
-      background-color: rgb(7, 36, 55);
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      font-size: 20px;
-    }
-  </style>
   <h1>RESUME</h1>
   <img src="My PHOTO.jpg" height="200" alt="Profile Picture"/>
   <br>
   <a href="mycontact.html">Contact Details</a>
+  <div class="section about">
+    <h2>ABOUT ME</h2>
+    <table>
+      <tr>
+        <th style="text-align:right;">NAME</th>
+        <td style="text-align:left;">S GUHAN RAJ</td>
+      </tr>
+      <tr>
+        <th style="text-align:right;">DOB</th>
+        <td style="text-align:left;">26-07-2006</td>
+      </tr>
+      <tr>
+        <th style="text-align:right;">LANGUAGES KNOWN</th>
+        <td style="text-align:left;">English (fluent), Tamil (fluent), Telugu (mother tongue), French (elementary)</td>
+      </tr>
+    </table>
+    <p style="margin-top:20px;font-size:20px;color:#1976d2;">
+      A Passionate engineer eager in learning the holistic image of Web and its development.
+    </p>
+  </div>
   <hr/>
-  <h2>ABOUT ME</h2>
-  <h>NAME : S GUHAN RAJ
-    <br>
-      DOB : 26-07-2006
-    <br>
-      LANGUAGES KNOWN : English(fluent), Tamil(fluent), Telugu(mother tongue), French(elementry)
-    <br>
-      A Passionate engineer eager in learning the holistic image of Web and it's developement.
-  </h>
-  <hr />
-  <h2>EDUCATIONAL QUALIFICATIONS</h2>
-  <ul>
-    <li>Grade 1-6-----THE PSBB MILLENNIUM SCHOOL, CUDDLORE (2011-2018)</li>
-    <li>Grade 7-10----THE PSBB MILLENNIUM SCHOOL, GERUGAMBAKKAM  (2018-2022)</li>
-    <li>Grade 11-12---VELAMMAL BODHI CAMPUS, KOLAPAKKAM  (2022-2024)</li>
-    <li>B.tech CSE core--SRM INSTITUTE OF SCIENCE AND TECHNOLOGY, KATTANKULATHUR  (2024-2028)</li>
-  </ul>
-<hr />
-<h2>WORKING EXPERIENCES</h2>
-<ul>
-    <li>Creatives associate under creatives domain at FUTURIX CLUB SRMIST(2024-2025)</li>
-    <li>CSE Internship at Kaashiv Infotech(20th June 2025-20th July 2025)</li>
-</ul>
-<hr />
-<h2>NATURAL SKILLS</h2>
-<ul>
-    <li>MANAGEMENT AND ORGANISING</li>
-    <li>CODING</li>
-    <li>INTERMEDIATE PHOTOGRAPHY</li>
-    <li>INTERMEDIATE EDITING</li>
-</ul>
-<hr />
-<h2>CERTIFICATIONS</h2>
-<h3>PROMT ENGINEERING IN IIT MADRAS</h3>
-<img src="Prompt Engineering Certificate.jpg" height="200" alt="Promt engineering certificate"/>
-<h3>JAVA, C++ and PHP crash course</h3>
-<img src="udemy certificate jpg.jpg" height="200" alt="udemy certificate"/>
-<h3>AWS CLOULD FOUNDATION</h3>
-<img src="AWS cloud foundation badge image.png" height="200" alt="AWS clould foundation"/>
-<img src="AWS cloud foundation certificate in jpg.jpg" height="200" alt="AWS clould foundation certificate"/>
-<h3>AWS MACHINE LEARNING</h3>
-<img src="AWS machine learning badge.png" height="200" alt="AWS machine learing"/>
-<img src="AWS machine learning certificate in jpg.jpg" height="200" alt="AWS machine learing certificate"/>
-<h3>AICTE CERTIFICATE OF VIRTUAL INTERNSHIP</h3>
-<img src="AICTE certificate in jpg.jpg" height="200" alt="AICTE certificate"/>
-<h3>ONE DAY WORKSHOP ON CHATBOTS RELOADED:THE AI REVOLUTION FROM ML TO RAG</h3>
-<img src="chatbot certificate in jpg.jpg" height="200" alt="Workshop on Chatbot"/>
-<h3>CSE INTERNSHIP OFFER LETTER FROM KAASHIV INFOTECH</h3>
-<img src="offer letter.jpg" height="200" alt="Internship offer letter"/>
-<footer>© All rights are reserved, Guhan</footer>
+  <div class="section education">
+    <h2>EDUCATIONAL QUALIFICATIONS</h2>
+    <table>
+      <tr>
+        <th>Grade</th><th>School</th><th>Year</th>
+      </tr>
+      <tr>
+        <td>Grade 1-6</td><td>THE PSBB MILLENNIUM SCHOOL, CUDDLORE</td><td>2011-2018</td>
+      </tr>
+      <tr>
+        <td>Grade 7-10</td><td>THE PSBB MILLENNIUM SCHOOL, GERUGAMBAKKAM</td><td>2018-2022</td>
+      </tr>
+      <tr>
+        <td>Grade 11-12</td><td>VELAMMAL BODHI CAMPUS, KOLAPAKKAM</td><td>2022-2024</td>
+      </tr>
+      <tr>
+        <td>B.tech CSE core</td><td>SRM INSTITUTE OF SCIENCE AND TECHNOLOGY, KATTANKULATHUR</td><td>2024-2028</td>
+      </tr>
+    </table>
+  </div>
+  <hr/>
+  <div class="section work">
+    <h2>WORKING EXPERIENCES</h2>
+    <table>
+      <tr>
+        <th>Company</th><th>Position</th><th>Year</th>
+      </tr>
+      <tr>
+        <td>FUTURIX CLUB SRMIST</td><td>Creatives Associate</td><td>2024 - present</td>
+      </tr>
+      <tr>
+        <td>Kaashiv Infotech</td><td>CSE Intern</td><td>20th June 2025 - 20th July 2025</td>
+      </tr>
+    </table>
+  </div>
+  <hr/>
+  <div class="section skills">
+    <h2>NATURAL SKILLS</h2>
+    <table class="skills-table">
+      <tr>
+        <th>Skill</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td><span class="icon">🗂️</span>Management & Organising</td>
+        <td>Efficiently manages teams and events with strong leadership.</td>
+      </tr>
+      <tr>
+        <td><span class="icon">💻</span>Coding</td>
+        <td>Proficient in multiple programming languages and problem solving.</td>
+      </tr>
+      <tr>
+        <td><span class="icon">📸</span>Intermediate Photography</td>
+        <td>Captures moments with creative composition and editing.</td>
+      </tr>
+      <tr>
+        <td><span class="icon">🎬</span>Intermediate Editing</td>
+        <td>Skilled in photo and video editing for professional results.</td>
+      </tr>
+    </table>
+  </div>
+  <hr/>
+  <div class="section certs">
+    <h2>CERTIFICATIONS</h2>
+    <h3>PROMT ENGINEERING IN IIT MADRAS</h3>
+    <img src="Prompt Engineering Certificate.jpg" height="200" alt="Promt engineering certificate" class="popup-cert"/>
+    <h3>JAVA, C++ and PHP crash course</h3>
+    <img src="udemy certificate jpg.jpg" height="200" alt="udemy certificate" class="popup-cert"/>
+    <h3>AWS CLOUD FOUNDATION</h3>
+    <img src="AWS cloud foundation badge image.png" height="200" alt="AWS cloud foundation" class="popup-cert"/>
+    <img src="AWS cloud foundation certificate in jpg.jpg" height="200" alt="AWS cloud foundation certificate" class="popup-cert"/>
+    <h3>AWS MACHINE LEARNING</h3>
+    <img src="AWS machine learning badge.png" height="200" alt="AWS machine learning" class="popup-cert"/>
+    <img src="AWS machine learning certificate in jpg.jpg" height="200" alt="AWS machine learning certificate" class="popup-cert"/>
+    <h3>AICTE CERTIFICATE OF VIRTUAL INTERNSHIP</h3>
+    <img src="AICTE certificate in jpg.jpg" height="200" alt="AICTE certificate" class="popup-cert"/>
+    <h3>ONE DAY WORKSHOP ON CHATBOTS RELOADED:THE AI REVOLUTION FROM ML TO RAG</h3>
+    <img src="chatbot certificate in jpg.jpg" height="200" alt="Workshop on Chatbot" class="popup-cert"/>
+    <h3>CSE INTERNSHIP OFFER LETTER FROM KAASHIV INFOTECH</h3>
+    <img src="offer letter.jpg" height="200" alt="Internship offer letter" class="popup-cert"/>
+    <img src="completion certificate in jpg.jpg" height="200" alt="Internship completion letter" class="popup-cert"/>
+    <h3>Android course build 3 applications from scratch with java</h3>
+    <img src="udemy certificate 2.jpg" height="200" alt="Android course certificate" class="popup-cert"/>
+    <h3>Project based learning : Transforming Learning Through Innovation</h3>
+    <img src="French certificate.jpg" height="200" alt="Project based learning certificate" class="popup-cert"/>
+    <h3>Brain Brew'25 Ideathon</h3>
+    <img src="Ideathon certificate.jpg" height="200" alt="Ideathon certificate" class="popup-cert"/>
+  </div>
+  <!-- Modal HTML -->
+  <div id="imgModal" class="modal">
+    <div class="modal-content">
+      <button class="close" onclick="closeModal()">&times;</button>
+      <img id="modalImg" src="" alt="Certificate enlarged"/>
+    </div>
+  </div>
+  <footer>© All rights are reserved, Guhan</footer>
+  <script>
+    // Popup logic
+    const modal = document.getElementById('imgModal');
+    const modalImg = document.getElementById('modalImg');
+    document.querySelectorAll('.popup-cert').forEach(img => {
+      img.onclick = function() {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+      }
+    });
+    function closeModal() {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+    // Close modal on outside click
+    modal.onclick = function(e) {
+      if (e.target === modal) closeModal();
+    }
+    // Optional: close modal on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
 </body>
 </html>
